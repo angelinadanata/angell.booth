@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PuzzleCam — Buatan Orang Keren</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Puzzle-Cam</h1>
+    <p>foto dulu baru susun puzzlenya yh</p>
+  </header>
+
+  <main class="layout">
+    <section class="stage-wrap" aria-label="Kamera">
+      <div class="stage" id="stage">
+        <canvas id="stage-canvas" width="1280" height="720"></canvas>
+        <video id="video" class="sr-only" playsinline muted></video>
+
+        <div class="hud">
+          <p class="pill" id="msg" role="status">nyalain dulu kameranya lol.</p>
+          <p class="pill count" id="count" hidden>0 / yeyyyy selesaii </p>
+        </div>
+
+        <div class="flash" id="flash"></div>
+
+        <div class="start" id="start">
+          <h2>dah siap blom</h2>
+          <p>have funn :> </p>
+          <button type="button" id="start-btn" class="btn primary">Nyalakan kamera</button>
+          <p class="error" id="error" role="alert" hidden></p>
+        </div>
+      </div>
+
+      <ul class="guide">
+        <li><strong>Bingkai:</strong> buat foto, tangannya bentuk huruf L ye </li>
+        <li><strong>Puzzle:</strong>  susun puzzle, caranya dicubit </li>
+        <li><strong>Simpan:</strong> kepal tangan buat save foto (asek) </li>
+      </ul>
+    </section>
+
+    <aside class="gallery" aria-label="Galeri">
+      <h2>Galeri</h2>
+      <ol class="strip" id="strip">
+        <li class="slot"><span>Foto 1</span></li>
+        <li class="slot"><span>Foto 2</span></li>
+        <li class="slot"><span>Foto 3</span></li>
+      </ol>
+      <p class="progress" id="progress">Foto 1 dari 3</p>
+      <button type="button" id="save-btn" class="btn" disabled>simpan foto</button>
+      <button type="button" id="reset-btn" class="btn ghost">ulang foto</button>
+    </aside>
+  </main>
+
+  <div class="result" id="result" hidden>
+    <div class="result-card">
+      <img id="result-img" alt="Strip foto hasil puzzle">
+      <div class="result-actions">
+        <p>udah di download bosqu .</p>
+        <button type="button" id="download-btn" class="btn primary">Unduh lagi</button>
+        <button type="button" id="again-btn" class="btn">Main lagi</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
